@@ -9,7 +9,6 @@ public class RadioDemoTest {
     @Test
     public void shouldDisplayCurrentStation() {
         RadioDemo radio = new RadioDemo(); // проверка переключения радиостанций с помощью клавиш 0-9
-
         radio.setCurrentStation(5);
         assertEquals(5, radio.getCurrentStation());
     }
