@@ -43,7 +43,6 @@
                         <phase>initialize</phase>
                         <goals>
                             <goal>prepare-agent</goal>
-
                         </goals>
                     </execution>
                     <execution>
@@ -65,9 +64,9 @@
                         <rule>
                             <limits>
                                 <limit>
-                                    <counter>INSTRUCTION</counter>
+                                    <counter>BRANCH</counter>
                                     <value>COVEREDRATIO</value>
-                                    <minimum>0.7</minimum>
+                                    <minimum>100%</minimum>
                                 </limit>
                             </limits>
                         </rule>
