@@ -10,13 +10,13 @@ public class RadioDemoTest {
 
     @Test
     public void shouldSetMaxStation() { // проверка максимального количества радиостанции
-        radio.setMaxStation(11);
+        RadioDemo radio = new RadioDemo(11);
         assertEquals(11, radio.getMaxStation());
     }
 
     @Test
     public void shouldNextWithNewMaxStation() { // проверка изменения станций в пределах максимального количества
-        radio.setMaxStation(11);
+        RadioDemo radio = new RadioDemo(11);
         radio.setCurrentStation(9);
         radio.nextCurrentStation();
         assertEquals(10,radio.getCurrentStation());
@@ -24,8 +24,8 @@ public class RadioDemoTest {
 
     @Test
     public void shouldDisplayCurrentStation() { // проверка переключения радиостанций с помощью клавиш 0-9
-        radio.setCurrentStation(5);
-        assertEquals(5, radio.getCurrentStation());
+        radio.setCurrentStation(6);
+        assertEquals(6, radio.getCurrentStation());
     }
 
     @Test
@@ -36,7 +36,7 @@ public class RadioDemoTest {
     }
 
     @Test
-    public void nextCurrentStationIfLimit() { // проверка переключения радиостанций при нажатии клавиши 9
+    public void nextCurrentStationIfLimit() { // проверка переключения радиостанций при нажатии клавиши 10
         radio.setCurrentStation(10);
         radio.nextCurrentStation();
         assertEquals(0, radio.getCurrentStation());
@@ -44,7 +44,7 @@ public class RadioDemoTest {
 
     @Test
     public void nextCurrentStationOverLimit() { // проверка переключения радиостанций при нажатии клавиш 10, 11, 12 и тд
-        radio.setCurrentStation(10);
+        radio.setCurrentStation(111);
         radio.nextCurrentStation();
         assertEquals(0, radio.getCurrentStation());
     }
@@ -71,30 +71,30 @@ public class RadioDemoTest {
     }
 
     @Test
-    public void shouldDisplayCurrentVolume() { // проверка отображения текущего уровня громкости (0-10)
-        radio.setCurrentVolume(1);
-        assertEquals(1, radio.getCurrentVolume());
+    public void shouldDisplayCurrentVolume() { // проверка отображения текущего уровня громкости (0-100)
+        radio.setCurrentVolume(100);
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
-    public void increaseCurrentVolume() { // проверка увеличения уровня громкости 0-10
-        radio.setCurrentVolume(9);
+    public void increaseCurrentVolume() { // проверка увеличения уровня громкости 0-100
+        radio.setCurrentVolume(95);
         radio.increaseCurrentVolume();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(96, radio.getCurrentVolume());
     }
 
     @Test
-    public void increaseCurrentVolumeIfLimit() { // проверка увеличения уровня громкости при нажатии клавиш более 10
+    public void increaseCurrentVolumeIfLimit() { // проверка увеличения уровня громкости при нажатии клавиш более 100
         radio.setCurrentVolume(101);
         radio.increaseCurrentVolume();
         assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
-    public void decreaseCurrentVolume() { // проверка уменьшения уровня громкости 10-0
-        radio.setCurrentVolume(5);
+    public void decreaseCurrentVolume() { // проверка уменьшения уровня громкости 100-0
+        radio.setCurrentVolume(99);
         radio.decreaseCurrentVolume();
-        assertEquals(4, radio.getCurrentVolume());
+        assertEquals(98, radio.getCurrentVolume());
     }
 
     @Test
