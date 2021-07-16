@@ -1,5 +1,6 @@
 package ru.netology.domain;
 
+<<<<<<< HEAD
 public class RadioDemo  {
 
     private int currentStation;
@@ -7,6 +8,15 @@ public class RadioDemo  {
     private int minStation = 0;
     private int currentVolume;
     private int maxVolume = 10;
+=======
+public class RadioDemo {
+
+    private int currentStation;
+    private int maxStation = 10;
+    private int minStation = 0;
+    private int currentVolume;
+    private int maxVolume = 100;
+>>>>>>> 272094e (New RadioDemo)
     private int minVolume = 0;
 
 
