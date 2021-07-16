@@ -9,6 +9,12 @@ public class RadioDemo {
     private int maxVolume = 100;
     private int minVolume = 0;
 
+    public RadioDemo(int maxStation){
+        this.maxStation = maxStation;
+    }
+
+    public RadioDemo(){
+    }
 
     public int getCurrentStation() {
         return currentStation;
