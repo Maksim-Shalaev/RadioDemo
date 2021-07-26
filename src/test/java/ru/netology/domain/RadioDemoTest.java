@@ -10,16 +10,16 @@ public class RadioDemoTest {
 
     @Test
     public void shouldSetMaxStation() { // проверка максимального количества радиостанции
-        RadioDemo radio = new RadioDemo(11);
-        assertEquals(11, radio.getMaxStation());
+        RadioDemo radio = new RadioDemo(12);
+        assertEquals(12, radio.getMaxStation());
     }
 
     @Test
     public void shouldNextWithNewMaxStation() { // проверка изменения станций в пределах максимального количества
-        RadioDemo radio = new RadioDemo(11);
-        radio.setCurrentStation(9);
+        RadioDemo radio = new RadioDemo(12);
+        radio.setCurrentStation(11);
         radio.nextCurrentStation();
-        assertEquals(10,radio.getCurrentStation());
+        assertEquals(12,radio.getCurrentStation());
     }
 
     @Test
