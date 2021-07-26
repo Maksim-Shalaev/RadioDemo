@@ -9,17 +9,17 @@ public class RadioDemoTest {
     RadioDemo radio = new RadioDemo();
 
     @Test
-    public void shouldSetMaxStation() { // проверка максимального количества радиостанции
-        RadioDemo radio = new RadioDemo(12);
-        assertEquals(12, radio.getMaxStation());
+    public void shouldSetMaxStation() { // проверка ввода максимального количества радиостанции
+        radio.setMaxStation (11);
+        assertEquals(11, radio.getMaxStation());
     }
 
     @Test
     public void shouldNextWithNewMaxStation() { // проверка изменения станций в пределах максимального количества
-        RadioDemo radio = new RadioDemo(12);
-        radio.setCurrentStation(11);
+        radio.setMaxStation (11);
+        radio.setCurrentStation(10);
         radio.nextCurrentStation();
-        assertEquals(12,radio.getCurrentStation());
+        assertEquals(11,radio.getCurrentStation());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class RadioDemoTest {
 
     @Test
     public void nextCurrentStationOverLimit() { // проверка переключения радиостанций при нажатии клавиш 10, 11, 12 и тд
-        radio.setCurrentStation(111);
+        radio.setCurrentStation(12);
         radio.nextCurrentStation();
         assertEquals(0, radio.getCurrentStation());
     }
