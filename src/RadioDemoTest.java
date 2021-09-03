@@ -44,7 +44,7 @@ public class RadioDemoTest {
 
     @Test
     public void nextCurrentStationOverLimit() { // проверка переключения радиостанций при нажатии клавиш 10, 11, 12 и тд
-        radio.setCurrentStation(12);
+        radio.setCurrentStation(10);
         radio.nextCurrentStation();
         assertEquals(0, radio.getCurrentStation());
     }
@@ -58,16 +58,16 @@ public class RadioDemoTest {
 
     @Test
     public void prevCurrentStationIfLimit() { // проверка переключения радиостанций при нажатии клавиши 0
-        radio.setCurrentStation(10);
+        radio.setCurrentStation(9);
         radio.prevCurrentStation();
-        assertEquals(9, radio.getCurrentStation());
+        assertEquals(8, radio.getCurrentStation());
     }
 
     @Test
     public void prevCurrentStationOverLimit() { // проверка переключения радиостанций при нажатии "отрицательных" клавиш
         radio.setCurrentStation(-1);
         radio.prevCurrentStation();
-        assertEquals(10, radio.getCurrentStation());
+        assertEquals(9, radio.getCurrentStation());
     }
 
     @Test
